@@ -151,15 +151,15 @@ data['totalEngagement'] = data['totalEngagementByNetwork']['facebook_page']+data
 data['maxEngagement'] = max(data['maxEngagementByNetwork']['facebook_page'],data['maxEngagementByNetwork']['twitter'],data['maxEngagementByNetwork']['instagram'])
 data['totalPosts'] = data['totalPostsByNetwork']['facebook_page']+data['totalPostsByNetwork']['twitter']+data['totalPostsByNetwork']['instagram']
 
-data['averageEngagement'] = data['totalEngagement']/data['totalPosts']
-data['averageEngagementByNetwork']['facebook_page'] = data['totalEngagementByNetwork']['facebook_page']/data['totalPostsByNetwork']['facebook_page']
-data['averageEngagementByNetwork']['twitter'] = data['totalEngagementByNetwork']['twitter']/data['totalPostsByNetwork']['twitter']
-data['averageEngagementByNetwork']['instagram'] = data['totalEngagementByNetwork']['instagram']/data['totalPostsByNetwork']['instagram']
+data['averageEngagement'] = round(data['totalEngagement']/data['totalPosts'],3)
+data['averageEngagementByNetwork']['facebook_page'] = round(data['totalEngagementByNetwork']['facebook_page']/data['totalPostsByNetwork']['facebook_page'],3)
+data['averageEngagementByNetwork']['twitter'] = round(data['totalEngagementByNetwork']['twitter']/data['totalPostsByNetwork']['twitter'],3)
+data['averageEngagementByNetwork']['instagram'] = round(data['totalEngagementByNetwork']['instagram']/data['totalPostsByNetwork']['instagram'],3)
 
-data['averageEngagementByScope']['anchor'] = data['totalEngagementByScope']['anchor']/data['totalPostsByScope']['anchor']
-data['averageEngagementByScope']['brand'] = data['totalEngagementByScope']['brand']/data['totalPostsByScope']['brand']
-data['averageEngagementByScope']['individual'] = data['totalEngagementByScope']['individual']/data['totalPostsByScope']['individual']
-data['averageEngagementByScope']['sub-brand'] = data['totalEngagementByScope']['sub-brand']/data['totalPostsByScope']['sub-brand']
+data['averageEngagementByScope']['anchor'] = round(data['totalEngagementByScope']['anchor']/data['totalPostsByScope']['anchor'],3)
+data['averageEngagementByScope']['brand'] = round(data['totalEngagementByScope']['brand']/data['totalPostsByScope']['brand'],3)
+data['averageEngagementByScope']['individual'] = round(data['totalEngagementByScope']['individual']/data['totalPostsByScope']['individual'],3)
+data['averageEngagementByScope']['sub-brand'] = round(data['totalEngagementByScope']['sub-brand']/data['totalPostsByScope']['sub-brand'],3)
 
 
 
