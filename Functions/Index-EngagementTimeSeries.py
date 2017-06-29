@@ -1,7 +1,18 @@
 import json
 import sys
 import os
-from helperMethods import *
+from Index_HelperMethods import *
+
+
+#####CHANGE CURRENT QUANTUM#####
+
+#Data window information
+snapshotTime = int(sys.argv[1].split('.')[len(sys.argv[1].split('.'))-1])
+currentQuantum = snapshotTime//300000
+weekTimeQuantum = 2015
+startingQuantum = currentQuantum-weekTimeQuantum
+currentHour = currentQuantum//12
+startHour = startingQuantum//12
 
 data = {
     'averageEngagementByAge': initializeAgeHours(),
@@ -17,17 +28,17 @@ data = {
         'sub-brand': initializeAgeHours()
     },
 
-    'averageEngagementOverTime': initializeDataTimelineHours(),
+    'averageEngagementOverTime': initializeDataTimelineHours(startHour),
     'averageEngagementOverTimeByNetwork':{
-        'facebook_page':initializeDataTimelineHours(),
-        'twitter':initializeDataTimelineHours(),
-        'instagram':initializeDataTimelineHours(),
+        'facebook_page':initializeDataTimelineHours(startHour),
+        'twitter':initializeDataTimelineHours(startHour),
+        'instagram':initializeDataTimelineHours(startHour),
     },
     'averageEngagementOverTimeByScope': {
-        'anchor': initializeDataTimelineHours(),
-        'brand': initializeDataTimelineHours(),
-        'individual': initializeDataTimelineHours(),
-        'sub-brand': initializeDataTimelineHours()
+        'anchor': initializeDataTimelineHours(startHour),
+        'brand': initializeDataTimelineHours(startHour),
+        'individual': initializeDataTimelineHours(startHour),
+        'sub-brand': initializeDataTimelineHours(startHour)
     },
 
     'maxEngagementByAge': initializeAgeHours(),
@@ -43,27 +54,20 @@ data = {
         'sub-brand': initializeAgeHours()
     },
 
-    'maxEngagementOverTime': [{'epochHour':0,'value':0}]*168,
+    'maxEngagementOverTime': initializeDataTimelineHours(startHour),
     'maxEngagementOverTimeByNetwork':{
-        'facebook_page':[{'epochHour':0,'value':0}]*168,
-        'twitter':[{'epochHour':0,'value':0}]*168,
-        'instagram':[{'epochHour':0,'value':0}]*168
+        'facebook_page':initializeDataTimelineHours(startHour),
+        'twitter':initializeDataTimelineHours(startHour),
+        'instagram':initializeDataTimelineHours(startHour)
     },
     'maxEngagementOverTimeByScope': {
-        'anchor': [{'epochHour':0,'value':0}]*168,
-        'brand': [{'epochHour':0,'value':0}]*168,
-        'individual': [{'epochHour':0,'value':0}]*168,
-        'sub-brand': [{'epochHour':0,'value':0}]*168
+        'anchor': initializeDataTimelineHours(startHour),
+        'brand': initializeDataTimelineHours(startHour),
+        'individual': initializeDataTimelineHours(startHour),
+        'sub-brand': initializeDataTimelineHours(startHour)
     },
-    'startingQuantum':0
+    'startingQuantum':startingQuantum
 }
-
-#Data window information
-currentQuantum = 1496709420185//300000
-startingQuantum = currentQuantum-2016+12
-data['startingQuantum']=startingQuantum
-currentHour = currentQuantum//12
-startingHour = startingQuantum//12
 
 #Path to the profiles collection from the current directory where this
 #python program is saved
@@ -78,12 +82,11 @@ scoringProfile = json.load(open('./'+sys.argv[1]+'/scoringprofile.json'))
 
 #contains data about engagement by age, engagement overtime, and both my scopes/network
 postSummaries = {}
-postCounter = initializeCounter(startingHour)
-engagementCounter = initializeCounter(startingHour)
+postCounter = initializeCounter(startHour)
+engagementCounter = initializeCounter(startHour)
 
 groups = scoringProfile['groups']
 
-count = 0
 
 #COUNTS TOTAL posts BY USING postCounter AND INITIALIZES postSummaries
 for group in groups:
@@ -97,15 +100,17 @@ for group in groups:
             postData = json.load(open(path+profile+'/postData.json'))
 
             for post in postData:
-                count+=1
                 postidString = post['postidString']
                 postTimestamp = post['timeQuantum']
-                postStartHour = postTimestamp//12+1
-                postSummaries[postidString] = initializePostSummary(scope, network, postTimestamp,startingHour)
+                postStartHour = postTimestamp//12
 
-                postCounter = updatePostCount(network,scope,postCounter,startingHour,postStartHour,currentHour)
+                postSummaries[postidString] = initializePostSummary(scope, network, postTimestamp,startHour)
+                # scope, network and postTimestamp are relevant to post
+                # startHour is relevant to overall production...
 
-#COUNTS TOTAL engagement BY USING engagementCounter
+                postCounter = updatePostCount(postCounter,network,scope,postStartHour,startHour,currentHour)
+
+# COUNTS TOTAL engagement BY USING engagementCounter
 for group in groups:
     for asset in group['assets']:
         currentAsset = group['assets'][asset]
@@ -121,15 +126,16 @@ for group in groups:
                 postEngagement = activity.get('likesRcvd',0)+activity.get('sharesRcvd',0)+activity.get('repliesRcvd',0)
 
                 time = activity['timeQuantum']
+                age = (time - postSummaries[postidString]['timestamp'])//12
+
                 if(time<startingQuantum):
                     continue
 
-                age = (time - postSummaries[postidString]['timestamp'])//12
-                activityEpochHour = time//12
-                engagementCounter = updateEngagementCount(postEngagement,age,activityEpochHour,engagementCounter,network,scope)
+                epochHourIndex = (time-startingQuantum)//12
+                engagementCounter = updateEngagementCount(postEngagement,age,epochHourIndex,engagementCounter,network,scope)
 
                 postSummaries[postidString]['engagementByAge'][age] += postEngagement
-                postSummaries[postidString]['engagementOverTime'][activityEpochHour] += postEngagement
+                postSummaries[postidString]['engagementOverTime'][epochHourIndex]['value'] += postEngagement
 
 
 #CALCULATE AVERAGES BY AGE
@@ -142,31 +148,34 @@ for age in range (0,720):
 
 #CALCULATE AVERAGES BY TIMELINE
 for hour in range (0,168):
-    epochHour = startingHour+hour
-    data['averageEngagementOverTime'][hour]={'epochHour':epochHour, 'value':engagementCounter['OverTime']['Overall'][epochHour]}
+    epochHour = startHour+hour
+    data['averageEngagementOverTime'][hour]['value']=round(engagementCounter['OverTime']['Overall'][hour]['value']/max(postCounter['OverTime']['Overall'][hour]['value'],1),3)
     for scope in scopes:
-        data['averageEngagementOverTimeByScope'][scope][hour]={'epochHour':epochHour, 'value':round(engagementCounter['OverTime']['Scope'][scope][epochHour]/max(postCounter['OverTime']['Scope'][scope][epochHour],1),3)}
+        data['averageEngagementOverTimeByScope'][scope][hour]['value']=round(engagementCounter['OverTime']['Scope'][scope][hour]['value']/max(postCounter['OverTime']['Scope'][scope][hour]['value'],1),3)
     for network in networks:
-        data['averageEngagementOverTimeByNetwork'][network][hour]={'epochHour':epochHour, 'value':round(engagementCounter['OverTime']['Network'][network][epochHour]/max(postCounter['OverTime']['Network'][network][epochHour],1),3)}
+        data['averageEngagementOverTimeByNetwork'][network][hour]['value']=round(engagementCounter['OverTime']['Network'][network][hour]['value']/max(postCounter['OverTime']['Network'][network][hour]['value'],1),3)
 
 #FIND MAX OF EACH PROPERTY BY ITERATING THROUGH ALL POSTS AND THEIR SUMMARIES
 for post in postSummaries:
+
     network = postSummaries[post]['network']
     scope = postSummaries[post]['scope']
+
     for age in range(0,720):
         currentEngagement = postSummaries[post]['engagementByAge'][age]
         data['maxEngagementByAge'][age] = max(currentEngagement,data['maxEngagementByAge'][age])
         data['maxEngagementByAgeByNetwork'][network][age] = max(currentEngagement,data['maxEngagementByAgeByNetwork'][network][age])
         data['maxEngagementByAgeByScope'][scope][age] = max(currentEngagement,data['maxEngagementByAgeByScope'][scope][age])
+
     for hour in range(0,168):
-        epochHour = startingHour+hour
-        currentEngagement = postSummaries[post]['engagementOverTime'][epochHour]
+        epochHour = startHour+hour
+        currentEngagement = postSummaries[post]['engagementOverTime'][hour]['value']
         if(currentEngagement>data['maxEngagementOverTime'][hour]['value']):
-            data['maxEngagementOverTime'][hour] = {'epochHour':epochHour,'value':currentEngagement}
+            data['maxEngagementOverTime'][hour]['value'] = currentEngagement
         if(currentEngagement>data['maxEngagementOverTimeByNetwork'][network][hour]['value']):
-            data['maxEngagementOverTimeByNetwork'][network][hour] = {'epochHour':epochHour,'value':currentEngagement}
+            data['maxEngagementOverTimeByNetwork'][network][hour]['value'] = currentEngagement
         if(currentEngagement>data['maxEngagementOverTimeByScope'][scope][hour]['value']):
-            data['maxEngagementOverTimeByScope'][scope][hour] = {'epochHour':epochHour,'value':currentEngagement}
+            data['maxEngagementOverTimeByScope'][scope][hour]['value'] = currentEngagement
 
 ################################################################################
 #########################  WRITING INTO JSON FILE ##############################
@@ -175,7 +184,12 @@ for post in postSummaries:
 outputDirectory = './'+sys.argv[1]+'/output/'
 if not os.path.exists(outputDirectory):
         os.mkdir(outputDirectory)
+indexDirectory = './'+sys.argv[1]+'/output/indices/'
+if not os.path.exists(indexDirectory):
+        os.mkdir(indexDirectory)
+timeSeriesDirectory = './'+sys.argv[1]+'/output/indices/engagementTimeSeries/'
+if not os.path.exists(timeSeriesDirectory):
+        os.mkdir(timeSeriesDirectory)
 
-
-with open(outputDirectory+'index-engagementTimeSeries.json', 'w') as outputFile:
+with open(timeSeriesDirectory+'index.json', 'w') as outputFile:
     json.dump(data, outputFile,indent = 4)

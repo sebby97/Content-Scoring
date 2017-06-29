@@ -156,6 +156,12 @@ data['averageEngagementByScope']['sub-brand'] = round(data['totalEngagementBySco
 outputDirectory = './'+sys.argv[1]+'/output/'
 if not os.path.exists(outputDirectory):
         os.mkdir(outputDirectory)
+indexDirectory = './'+sys.argv[1]+'/output/indices/'
+if not os.path.exists(indexDirectory):
+        os.mkdir(indexDirectory)
+totalTimeDirectory = './'+sys.argv[1]+'/output/indices/engagementTotalTime/'
+if not os.path.exists(totalTimeDirectory):
+        os.mkdir(totalTimeDirectory)
 
-with open(outputDirectory+'index-engagementTotalTime.json', 'w') as outputFile:
+with open(totalTimeDirectory+'index.json', 'w') as outputFile:
     json.dump(data, outputFile,indent = 4)

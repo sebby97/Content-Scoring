@@ -1,0 +1,51 @@
+{
+    "totalEngagement": 8676208,
+    "totalEngagementByNetwork": {
+        "facebook_page": 7527416,
+        "instagram": 878144,
+        "twitter": 270648
+    },
+    "totalEngagementByScope": {
+        "anchor": 13025,
+        "brand": 7746920,
+        "individual": 902232,
+        "sub-brand": 14031
+    },
+    "maxEngagement": 88968,
+    "maxEngagementByNetwork": {
+        "facebook_page": 88968,
+        "instagram": 16065,
+        "twitter": 6349
+    },
+    "maxEngagementByScope": {
+        "anchor": 574,
+        "brand": 88968,
+        "individual": 16065,
+        "sub-brand": 261
+    },
+    "totalPosts": 38317,
+    "totalPostsByNetwork": {
+        "facebook_page": 13477,
+        "instagram": 1197,
+        "twitter": 23643
+    },
+    "totalPostsByScope": {
+        "anchor": 310,
+        "brand": 18213,
+        "individual": 18303,
+        "sub-brand": 1491
+    },
+    "averageEngagement": 226.432,
+    "averageEngagementByNetwork": {
+        "facebook_page": 558.538,
+        "instagram": 733.621,
+        "twitter": 11.447
+    },
+    "averageEngagementByScope": {
+        "anchor": 42.016,
+        "brand": 425.351,
+        "individual": 49.294,
+        "sub-brand": 9.41
+    },
+    "startingQuantum": 4987188
+}
