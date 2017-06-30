@@ -21,6 +21,19 @@ topSixHourByNetwork = []
 topOneDayByNetwork = []
 topOneWeekByNetwork = []
 
+emergingCount = 0
+emergingByScopeCount = {
+    'anchor': 0,
+    'brand': 0,
+    'individual': 0,
+    'sub-brand': 0
+}
+emergingByNetworkCount = {
+    'facebook_page': 0,
+    'twitter':0,
+    'instagram':0
+}
+
 ###ITERATE THROUGH ALL ASSETS AND PROFILES
 
 for group in groups:
@@ -31,6 +44,32 @@ for group in groups:
 
         for profile in assetProfiles:
             profileData = json.load(open('./'+sys.argv[1]+'/output/scores/engagementTimeSeries/'+profile+'.json'))
+            network = profile.split('.')[0]
+
+            for postID in profileData.keys():
+
+
+                postScoreData = profileData[postID]
+
+                dataLength = len(postScoreData['engagementVsAverageOverTime'])
+                for hour in range(dataLength-1,-1,-1):
+                    if(hour>=dataLength-12):
+                        emergingCount += postScoreData['engagementVsAverageByAge'][hour]
+                        emergingByScopeCount[scope] += postScoreData['engagementVsAverageByAgeByScope'][hour]
+                        emergingByNetworkCount[network] += postScoreData['engagementVsAverageByAgeByNetwork'][hour]
+                    else:
+                        break
+
+
+for group in groups:
+    for asset in group['assets']:
+        currentAsset = group['assets'][asset]
+        scope = currentAsset['scope']
+        assetProfiles = list( filter( None,[currentAsset.get('facebook'),currentAsset.get('twitter'),currentAsset.get('instagram')] ) )
+
+        for profile in assetProfiles:
+            profileData = json.load(open('./'+sys.argv[1]+'/output/scores/engagementTimeSeries/'+profile+'.json'))
+            network = profile.split('.')[0]
 
             ####LOOPS THROUGH ALL POSTS IN PROFILE###
             for postID in profileData.keys():
@@ -47,6 +86,9 @@ for group in groups:
                 oneDayNetwork = 0
                 oneWeekScope = 0
                 oneWeekNetwork = 0
+                emergingPost = 0
+                emergingPostByScope = 0
+                emergingPostByNetwork = 0
 
                 #LOOPS THROUGH EACH TIME FRAME (Max of 168 which is 1 week of hours)
 
@@ -56,6 +98,9 @@ for group in groups:
                         sixHour += postScoreData['engagementVsAverageOverTime'][hour]['value']
                         sixHourScope += postScoreData['engagementVsAverageOverTimeByScope'][hour]['value']
                         sixHourNetwork += postScoreData['engagementVsAverageOverTimeByNetwork'][hour]['value']
+                        emergingPost += postScoreData['engagementVsAverageByAge'][hour]
+                        emergingPostByScope +=postScoreData['engagementVsAverageByAgeByScope'][hour]
+                        emergingPostByNetwork +=postScoreData['engagementVsAverageByAgeByNetwork'][hour]
                     if(hour>dataLength-24):
                         oneDay += postScoreData['engagementVsAverageOverTime'][hour]['value']
                         oneDayScope += postScoreData['engagementVsAverageOverTimeByScope'][hour]['value']
@@ -76,8 +121,14 @@ for group in groups:
                 topOneDayByNetwork.append((postID,oneDayNetwork))
                 topOneWeekByNetwork.append((postID,oneWeekNetwork))
 
+                emerging.append((postID,emergingPost/max(emergingCount,1)))
+                emergingByScope.append((postID,emergingPostByScope/max(emergingByScopeCount[scope],1)))
+                emergingByNetwork.append((postID,emergingPostByNetwork/max(emergingByNetworkCount[network],1)))
 
 
+emerging = [x[0] for x in sorted(emerging, key=lambda x: x[1],reverse=True)]
+emergingByScope = [x[0] for x in sorted(emergingByScope, key=lambda x: x[1],reverse=True)]
+emergingByNetwork = [x[0] for x in sorted(emergingByNetwork, key=lambda x: x[1],reverse=True)]
 topSixHour = [x[0] for x in sorted(topSixHour, key=lambda x: x[1],reverse=True)]
 topOneDay = [x[0] for x in sorted(topOneDay, key=lambda x: x[1],reverse=True)]
 topOneWeek = [x[0] for x in sorted(topOneWeek, key=lambda x: x[1],reverse=True)]
@@ -90,6 +141,9 @@ topOneWeekByNetwork = [x[0] for x in sorted(topOneWeekByNetwork, key=lambda x: x
 
 
 outputData = {
+    'emerging':emerging,
+    'emergingByScope':emergingByScope,
+    'emergingByNetwork':emergingByNetwork,
     'topSixHour':topSixHour,
     'topSixHourByScope':topSixHourByScope,
     'topSixHourByNetwork':topSixHourByNetwork,
