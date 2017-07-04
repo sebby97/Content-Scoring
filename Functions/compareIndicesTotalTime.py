@@ -1,8 +1,8 @@
 import json
 import sys
 
-output1 = json.load(open(sys.argv[1]+'output/indices/engagementTotalTime/index.json'))
-output2 = json.load(open(sys.argv[1]+'indices/engagementTotalTime/index.json'))
+output1 = json.load(open(sys.argv[1]+'/output/indices/engagementTotalTime/index.json'))
+output2 = json.load(open(sys.argv[1]+'/indices/engagementTotalTime/index.json'))
 
 def recursiveCheck(output1,output2,path):
     for key in output1.keys():

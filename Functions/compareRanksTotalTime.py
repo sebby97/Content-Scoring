@@ -1,16 +1,21 @@
 import json
 import sys
 
-output1 = json.load(open(sys.argv[1]+'output/ranks/engagementTotalTime/rank.json'))
-output2 = json.load(open(sys.argv[1]+'ranks/engagementTotalTime/ranks.json'))
+output1 = json.load(open(sys.argv[1]+'/output/ranks/engagementTotalTime/rank.json'))
+output2 = json.load(open(sys.argv[1]+'/ranks/engagementTotalTime/ranks.json'))
 
 
 def listDiff(list1, list2):
     indexDiff = []
-    for i in range(0,len(list1)):
-        if(list1[i]!=list2[i]):
-            indexDiff.append(i)
-    print(indexDiff)
+    count=0
+    for i in list1:
+        if(count==100):
+            break
+        index1 = list1.index(i)
+        index2 = list2.index(i)
+        indexDiff.append(index2-index1)
+        count+=1
+    print(indexDiff[0:100])
 
 
 def recursiveCheck(output1,output2,path):
