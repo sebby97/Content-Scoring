@@ -9,8 +9,9 @@ from Index_HelperMethods import *
 #Data window information
 snapshotTime = int(sys.argv[1].split('.')[len(sys.argv[1].split('.'))-1])
 currentQuantum = snapshotTime//300000
+print(currentQuantum)
 weekTimeQuantum = 2015
-startingQuantum = currentQuantum-weekTimeQuantum
+startingQuantum = currentQuantum-weekTimeQuantum+12
 currentHour = currentQuantum//12
 startHour = startingQuantum//12
 
@@ -101,6 +102,8 @@ for group in groups:
 
             for post in postData:
                 postidString = post['postidString']
+                if(postidString == 'twitter.879679141871747073'):
+                    print(profile)
                 postTimestamp = post['timeQuantum']
                 postStartHour = postTimestamp//12
 

@@ -7,7 +7,7 @@ index_engagementTimeSeries = json.load(open('./'+sys.argv[1]+'/output/indices/en
 
 snapshotTime = int(sys.argv[1].split('.')[len(sys.argv[1].split('.'))-1])
 currentQuantum = snapshotTime//300000
-startingQuantum = currentQuantum-2015
+startingQuantum = currentQuantum-2015+12
 currentHour = currentQuantum//12
 
 #############################################################
@@ -59,6 +59,7 @@ for group in groups:
                     'network':network,
                     'totalEngagementSinceQuantum':0
                 }
+
             activityData = json.load(open(path+profile+'/activity.json'))
             for activity in activityData:
                 postID = activity['postidString']

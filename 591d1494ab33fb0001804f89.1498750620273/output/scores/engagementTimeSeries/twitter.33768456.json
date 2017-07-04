@@ -1,11 +1,10 @@
 {
     "twitter.877302932185763842": {
         "post_start": 4993334,
-        "startAge": 40,
-        "totalAgeData": 169,
+        "startAge": 41,
+        "totalAgeData": 168,
         "engagementByAge": [
-            4,
-            1,
+            0,
             4,
             2,
             2,
@@ -175,10 +174,6 @@
             0
         ],
         "engagementOverTime": [
-            {
-                "epochHours": 416151,
-                "value": 5
-            },
             {
                 "epochHours": 416152,
                 "value": 2
@@ -846,36 +841,39 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
-            0.061,
-            0.037,
-            0.236,
-            0.156,
-            0.214,
-            0.132,
-            0.315,
-            0.176,
-            1.264,
-            0.398,
-            0.205,
-            0.452,
-            0.739,
             0.0,
+            0.15,
+            0.118,
+            0.155,
+            0.107,
+            0.262,
+            0.157,
+            1.229,
+            0.361,
+            0.199,
+            0.41,
+            0.676,
+            0.0,
+            0.266,
             0.298,
-            0.333,
             0.0,
-            1.146,
-            0.0,
+            1.094,
             0.0,
             0.0,
             0.0,
-            0.444,
-            0.464,
-            1.158,
-            0.743,
-            1.775,
+            0.0,
+            0.43,
+            0.442,
+            0.924,
+            0.582,
+            1.504,
             0.0,
             0.0,
             2.0,
@@ -1020,9 +1018,8 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.689,
-            0.784,
-            4.0,
+            0.0,
+            3.127,
             2.0,
             2.0,
             1.0,
@@ -1191,17 +1188,16 @@
             0.0
         ],
         "engagementVsAverageByAgeByScope": [
-            0.224,
-            0.147,
-            0.956,
-            0.684,
-            0.916,
-            0.535,
-            1.34,
-            0.765,
-            6.045,
-            1.896,
-            1.0,
+            0.0,
+            0.586,
+            0.484,
+            0.682,
+            0.459,
+            1.066,
+            0.666,
+            5.331,
+            1.726,
+            0.947,
             2.0,
             3.0,
             0.0,
@@ -1367,36 +1363,35 @@
             0.0,
             0.0,
             0.001,
-            0.001,
             0.002,
             0.001,
-            0.005,
-            0.001,
-            0.0,
-            0.001,
-            0.001,
-            0.0,
-            0.0,
-            0.001,
-            0.0,
-            0.002,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
+            0.006,
             0.001,
             0.001,
             0.001,
-            0.001,
-            0.001,
-            0.0,
-            0.0,
             0.001,
             0.0,
             0.0,
             0.0,
             0.0,
             0.002,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.002,
+            0.001,
+            0.002,
+            0.001,
+            0.001,
+            0.0,
+            0.0,
+            0.001,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.002,
             0.001,
             0.0,
             0.001,
@@ -1406,7 +1401,7 @@
             0.0,
             0.0,
             0.0,
-            0.011,
+            0.009,
             0.0,
             0.0,
             0.0,
@@ -1444,7 +1439,7 @@
             0.0,
             0.0,
             0.0,
-            0.003,
+            0.002,
             0.0,
             0.0,
             0.0,
@@ -1466,7 +1461,7 @@
             0.0,
             0.0,
             0.0,
-            0.007,
+            0.005,
             0.0,
             0.0,
             0.0,
@@ -1487,7 +1482,7 @@
             0.0,
             0.0,
             0.0,
-            0.125,
+            0.034,
             0.0,
             0.0,
             0.0,
@@ -1533,57 +1528,56 @@
             0.0
         ],
         "engagementVsMaxByAgeByNetwork": [
-            0.028,
-            0.018,
-            0.026,
+            0.0,
+            0.07,
+            0.013,
             0.054,
-            0.051,
-            0.011,
-            0.059,
-            0.021,
-            0.103,
+            0.026,
+            0.022,
+            0.029,
+            0.146,
+            0.029,
+            0.008,
+            0.033,
+            0.046,
+            0.0,
             0.017,
-            0.016,
-            0.031,
-            0.06,
-            0.0,
             0.025,
-            0.034,
-            0.0,
-            0.188,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.1,
-            0.1,
-            0.25,
-            0.167,
-            0.25,
-            0.0,
-            0.0,
-            0.167,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.214,
-            0.062,
             0.0,
             0.2,
             0.0,
             0.0,
             0.0,
             0.0,
-            0.0,
-            0.0,
-            1.5,
-            0.0,
-            0.0,
-            0.0,
+            0.043,
+            0.1,
+            0.2,
+            0.125,
+            0.333,
             0.0,
             0.0,
             0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.231,
+            0.071,
+            0.0,
+            0.111,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.375,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
             0.0,
             0.0,
             0.333,
@@ -1615,16 +1609,16 @@
             0.0,
             0.0,
             0.0,
+            0.333,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
             0.5,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
             0.0,
             0.0,
             0.0,
@@ -1704,57 +1698,107 @@
             0.0
         ],
         "engagementVsMaxByAgeByScope": [
-            0.001,
             0.0,
+            0.002,
+            0.001,
+            0.002,
+            0.001,
             0.003,
             0.002,
-            0.003,
-            0.002,
-            0.005,
-            0.002,
-            0.021,
-            0.008,
+            0.017,
+            0.006,
             0.004,
-            0.01,
+            0.007,
             0.014,
             0.0,
             0.005,
-            0.007,
+            0.005,
             0.0,
-            0.024,
-            0.0,
-            0.0,
+            0.02,
             0.0,
             0.0,
+            0.0,
+            0.0,
+            0.008,
             0.011,
-            0.01,
-            0.025,
-            0.009,
-            0.024,
+            0.021,
+            0.013,
+            0.018,
             0.0,
             0.0,
-            0.028,
+            0.023,
             0.0,
             0.0,
             0.0,
             0.0,
             0.065,
-            0.024,
+            0.022,
             0.0,
-            0.031,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.091,
+            0.023,
             0.0,
             0.0,
             0.0,
             0.0,
             0.0,
-            0.059,
+            0.0,
+            0.086,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.036,
+            0.0,
+            0.0,
+            0.067,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.1,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.333,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0,
             0.0,
             0.071,
@@ -1778,58 +1822,7 @@
             0.0,
             0.0,
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.143,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.2,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.5,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.25,
+            0.167,
             0.0,
             0.0,
             0.0,
@@ -1876,10 +1869,6 @@
         ],
         "engagementVsAverageOverTime": [
             {
-                "epochHours": 416151,
-                "value": 5.0
-            },
-            {
                 "epochHours": 416152,
                 "value": 2.0
             },
@@ -2545,15 +2534,15 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
             {
-                "epochHours": 416151,
-                "value": 5.0
-            },
-            {
                 "epochHours": 416152,
                 "value": 2.0
             },
@@ -3219,15 +3208,15 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByScope": [
             {
-                "epochHours": 416151,
-                "value": 5.0
-            },
-            {
                 "epochHours": 416152,
                 "value": 2.0
             },
@@ -3894,13 +3883,13 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
-            {
-                "epochHours": 416151,
-                "value": 0.004
-            },
             {
                 "epochHours": 416152,
                 "value": 0.002
@@ -4568,13 +4557,13 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
-            {
-                "epochHours": 416151,
-                "value": 0.152
-            },
             {
                 "epochHours": 416152,
                 "value": 0.095
@@ -5242,13 +5231,13 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
-            {
-                "epochHours": 416151,
-                "value": 0.015
-            },
             {
                 "epochHours": 416152,
                 "value": 0.008
@@ -5915,6 +5904,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
@@ -6745,6 +6738,10 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
@@ -6914,7 +6911,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.172,
+            0.171,
             0.0,
             0.0,
             0.0,
@@ -8399,6 +8396,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
@@ -9056,6 +9057,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
@@ -9715,6 +9720,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
@@ -10373,12 +10382,16 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
             {
                 "epochHours": 416155,
-                "value": 0.03
+                "value": 0.048
             },
             {
                 "epochHours": 416156,
@@ -11030,13 +11043,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
             {
                 "epochHours": 416155,
-                "value": 0.003
+                "value": 0.004
             },
             {
                 "epochHours": 416156,
@@ -11688,6 +11705,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
@@ -12028,6 +12049,10 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
@@ -12099,7 +12124,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.516,
+            0.513,
             0.0,
             0.0,
             0.0,
@@ -12167,7 +12192,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByScope": [
-            0.168,
+            0.167,
             0.0,
             0.0,
             0.0,
@@ -12702,6 +12727,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
@@ -12967,6 +12996,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
@@ -13234,6 +13267,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
@@ -13500,12 +13537,16 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
             {
                 "epochHours": 416253,
-                "value": 0.091
+                "value": 0.143
             },
             {
                 "epochHours": 416254,
@@ -13765,13 +13806,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
             {
                 "epochHours": 416253,
-                "value": 0.009
+                "value": 0.012
             },
             {
                 "epochHours": 416254,
@@ -14031,6 +14076,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
@@ -14296,6 +14345,10 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
@@ -14352,7 +14405,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.172,
+            0.171,
             0.0,
             0.0,
             0.0,
@@ -14820,6 +14873,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
@@ -15025,6 +15082,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
@@ -15232,6 +15293,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
@@ -15438,12 +15503,16 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
             {
                 "epochHours": 416268,
-                "value": 0.03
+                "value": 0.048
             },
             {
                 "epochHours": 416269,
@@ -15491,7 +15560,7 @@
             },
             {
                 "epochHours": 416280,
-                "value": 0.019
+                "value": 0.091
             },
             {
                 "epochHours": 416281,
@@ -15643,13 +15712,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
             {
                 "epochHours": 416268,
-                "value": 0.003
+                "value": 0.004
             },
             {
                 "epochHours": 416269,
@@ -15697,7 +15770,7 @@
             },
             {
                 "epochHours": 416280,
-                "value": 0.019
+                "value": 0.042
             },
             {
                 "epochHours": 416281,
@@ -15849,6 +15922,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
@@ -16114,6 +16191,10 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
@@ -16170,7 +16251,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.172,
+            0.171,
             0.0,
             0.0,
             0.0,
@@ -16638,6 +16719,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
@@ -16843,6 +16928,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
@@ -17050,6 +17139,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
@@ -17256,12 +17349,16 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
             {
                 "epochHours": 416268,
-                "value": 0.03
+                "value": 0.048
             },
             {
                 "epochHours": 416269,
@@ -17461,13 +17558,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
             {
                 "epochHours": 416268,
-                "value": 0.003
+                "value": 0.004
             },
             {
                 "epochHours": 416269,
@@ -17667,6 +17768,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
@@ -17872,6 +17977,10 @@
             {
                 "epochHours": 416318,
                 "value": 0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0
             }
         ],
         "engagementVsAverageByAge": [
@@ -17898,7 +18007,7 @@
             0.0,
             0.0,
             0.0,
-            0.464,
+            0.462,
             0.0,
             0.0,
             0.0,
@@ -17916,7 +18025,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByNetwork": [
-            0.344,
+            0.342,
             0.0,
             0.0,
             0.0,
@@ -17957,7 +18066,7 @@
             0.0
         ],
         "engagementVsAverageByAgeByScope": [
-            0.112,
+            0.111,
             0.0,
             0.0,
             0.0,
@@ -18276,6 +18385,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsAverageOverTimeByNetwork": [
@@ -18433,6 +18546,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
@@ -18592,6 +18709,10 @@
             {
                 "epochHours": 416318,
                 "value": 0.0
+            },
+            {
+                "epochHours": 416319,
+                "value": 0.0
             }
         ],
         "engagementVsMaxOverTime": [
@@ -18689,7 +18810,7 @@
             },
             {
                 "epochHours": 416303,
-                "value": 0.001
+                "value": 0.0
             },
             {
                 "epochHours": 416304,
@@ -18749,13 +18870,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByNetwork": [
             {
                 "epochHours": 416280,
-                "value": 0.061
+                "value": 0.095
             },
             {
                 "epochHours": 416281,
@@ -18847,7 +18972,7 @@
             },
             {
                 "epochHours": 416303,
-                "value": 0.026
+                "value": 0.022
             },
             {
                 "epochHours": 416304,
@@ -18907,13 +19032,17 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ],
         "engagementVsMaxOverTimeByScope": [
             {
                 "epochHours": 416280,
-                "value": 0.006
+                "value": 0.008
             },
             {
                 "epochHours": 416281,
@@ -19005,7 +19134,7 @@
             },
             {
                 "epochHours": 416303,
-                "value": 0.007
+                "value": 0.002
             },
             {
                 "epochHours": 416304,
@@ -19065,6 +19194,10 @@
             },
             {
                 "epochHours": 416318,
+                "value": 0.0
+            },
+            {
+                "epochHours": 416319,
                 "value": 0.0
             }
         ]
